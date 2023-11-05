@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aula 14</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<style type="text/css">
+		.box{
+			background: linear-gradient(to top left, yellow,red);
+			width: 300px;
+			height: 300px;
+			margin: 50px;
+			box-sizing: border-box;
+			box-shadow: 10px 10px 5px #888888;
+			float: left; 
+		}
+		.box h1{
+			background: rgb(255,255,255,0.5);
+			text-shadow: 3px 3px 3px orange;
+		}
+		.grad{
+			background-image: linear-gradient(to bottom left,red,green,purple,blue);
+			width: 300px;
+			height: 300px;
+			margin: 50px;
+			box-sizing: border-box;
+			float: left;
+		}
+		.rad{
+			background-image: radial-gradient(red,yellow,green);
+			width: 700px;
+			height: 150px;
+			margin: 50px;
+			box-sizing: border-box;
+			float: left;
+		}
+		.sha1{
+			background-color: #ffb6c1;
+			width: 400px;
+			height: 150px;
+			margin: 50px;
+			position: relative;
+			float: left;
+		}
+		.sha1:before, .sha1:after{
+             content: "";
+             position: absolute;
+             z-index: -1;
+		}
+		.sha1:before{
+			width: 35%;
+			height: 25%;
+			left: 15px;
+			bottom: 15px;
+			box-shadow: 0px 20px 10px #333;
+			-moz-transform: rotate(-5deg);
+		} 
+		.sha1:after{
+			width: 35%;
+			height: 25%;
+			right: 15px;
+			bottom: 15px;
+			box-shadow: 0px 20px 10px #333;
+			transform: rotate(5deg);
+		} 
+		.sha2{
+			background-color:#f5deb3;
+			width: 400px;
+			height: 150px;
+			margin: 50px;
+			position: relative;
+			float: left;
+		}
+		.sha2:before, .sha2:after{
+             content: "";
+             position: absolute;
+             z-index: -1;
+		}
+		.sha2:before{
+			width: 35%;
+			height: 25%;
+			left: 10px;
+			bottom: 15px;
+			box-shadow: 0px 20px 10px #333;
+			transform: rotate(-4deg); 
+		}
+	</style>
+</head>
+<body>
+ <div class="box">
+ 	<h1>Lorem Ipsum</h1>
+ 	<p>O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados. Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et Malorum" de Cicero também foram reproduzidas abaixo em sua forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.</p>
+ </div>
+ <div class="grad">
+ 	
+ </div>
+ <div class="rad">
+ 	
+ </div>
+ <div class="sha1">
+ 	
+ </div>
+ <div class="sha2">
+ 	
+ </div>
+</body>
+</html>
