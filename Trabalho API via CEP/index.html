@@ -16,10 +16,11 @@
 
         var cep = $ ("#cep").val();
 
-         $ ("rua").val("...");
-         $ ("bairro").val("...");
-         $ ("cidade").val("...");
-         $ ("ibge").val("...");
+         $ ("#rua").val("...");
+         $ ("#bairro").val("...");
+         $ ("#cidade").val("...");
+         $ ("#uf").val("...")
+         $ ("#ibge").val("...");
 
          var url = "https://viacep.com.br/ws/"+ cep +"/json/";
 
@@ -27,17 +28,18 @@
 
             if (!("erro"in retorno)) {
 
-                 $ ("rua").val(retorno.logradouro);
-                 $ ("bairro").val(retorno.bairro);
-                 $ ("cidade").val(retorno.cidade);
-                 $ ("ibge").val(retorno.ibge);
+                 $ ("#rua").val(retorno.logradouro);
+                 $ ("#bairro").val(retorno.bairro);
+                 $ ("#cidade").val(retorno.cidade);
+                 $ ("#uf").val(retorno.uf);
+                 $ ("#ibge").val(retorno.ibge);
             }
             else{
                 alert("Cep não encontrado"):
             }
 
-           })
-    })
+           });
+    });
    
 
     </script>
@@ -49,12 +51,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    
-
+     <hr>
     <label>Cep:
-        <input name="cep" type="text" id="cep" value="" placeholder="somente numeros" size="10" maxlength="9"></label><button id="mybtn">Clique</button><br>
+        <input name="cep" type="text" id="cep" value="" placeholder="somente numeros" size="10" maxlength="9"></label>  
 
+        <button id="mybtn">Clique</button><br>
+    </hr>
     
-      <form method="get" action=".">
+     <hr>
       
         <label>Rua:<br>
         <input name="rua" type="text" id="rua" size="60" /></label><br />
@@ -66,7 +70,7 @@
         <input name="uf" type="text" id="uf" size="2" /></label><br />
         <label>IBGE:<br>
         <input name="ibge" type="text" id="ibge" size="8" /></label><br />
-      </form>
+      </hr>
       
     </body>
        
