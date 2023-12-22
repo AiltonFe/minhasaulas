@@ -6,28 +6,233 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+    	.ativo{color: green;}
+    	.inativo{color: red;}
 
+    	
+    </style>
 
 </head>
 <body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<hr>
-		<button class="btn btn-primary" class="fa fa-recet">Pedidoas Recentes</button>
-		<button class="btn btn-primary">Enviar cliente</button>
-		<button class="btn btn-primary">receber Pagamento</button>
-		<button class="btn btn-primary">Todos os Pedidos</button>
-		<button class="btn btn-primary" class="fa fa-file">Novo Pedido</button>
-		<button class="btn btn-primary">Pagina Principal</button>
+		<button class="btn btn-primary"><i class="fa fa-history"></i>Pedidoas Recentes</button>
+		<button class="btn btn-primary"><i class="fa fa-list view"></i>Enviar cliente</button>
+		<button class="btn btn-primary"><i class="fa fa-list view"></i>receber Pagamento</button>
+		<button class="btn btn-primary"><i class="fa fa-list view"></i>Todos os Pedidos</button>
+		<button class="btn btn-primary" ><i class="fa fa-file"></i>Novo Pedido</button>
+		<button class="btn btn-primary"><i class="fa fa-home"></i>Pagina Principal</button>
 
 		<hr>
-			<h1 >Pesquisar produto</h1>
+			<div class="alert-success alert-dismissible fade show" role="alert">
+				<strong>Pesquisar produto</strong> <a href="#" class="alert-link" aria-label="close"></a>
+				<span aria-hidden="true">&times;</span>
+			</div>
+
 			 <label>Descrição<br>
-        <input/></label><br>  
+
+        <input/></label>  <br>   
 
 
-        <button class="btn btn-primary">Pesquisar</button>
-		<button class="btn btn-primary">Recarregar </button>
-		<button class="btn btn-primary">Novo</button>
+        <button class="btn btn-primary"><i  class="fa fa-search"></i>Pesquisar</button>
+		<button class="btn btn-primary"><i class="fa fa-repeat"></i>Recarregar </button>
+		<button class="btn btn-primary"><i class="fa fa-file"></i> Novo</button><br>
+
+		Registro por Pagina  
+<select name="Pagina" id="numero">
+
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+         <option value="10">10</option>
+         
+
+      </select>  
+
+
+        <label for="search">           </label>
+  <input type="search" id="search" name="search" placeholder="Digite sua busca aqui">
+  <button onclick="buscar()">Buscar</button>
+
+  <script>
+    function buscar() {
+      var termoBusca = document.getElementById("search").value;
+     
+      alert("Buscando por: " + termoBusca);
+    }
+  </script>       <br/>
+        
+		<table class="table table-striped table-hover table-condensed">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>Descrição</th>
+		<th>Situação</th>
+		<th>Ações</th>
+	</tr>
+
+</thead>
+<tbody>
+	<tr>
+		<td>1</td>
+		<td>Pizza</td>
+		<td>
+			<button id="status" class="ativo" onclick="alternarStatus()">Ativo</button>
+  
+
+  <script>
+    function alternarStatus() {
+      var statusElemento = document.getElementById("status");
+
+      if (statusElemento.classList.contains("ativo")) {
+        statusElemento.innerHTML = "Inativo";
+        statusElemento.classList.remove("ativo");
+        statusElemento.classList.add("inativo");
+      } else {
+        statusElemento.innerHTML = "Ativo";
+        statusElemento.classList.remove("inativo");
+        statusElemento.classList.add("ativo");
+      }
+    }
+  </script>
+</td>
+ <td>
+ 	
+  	
+  <a href="#" onclick="verDetalhes()" class="fa fa-list view" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title=" ver Detalhes"></a>
+  <a href="#" onclick="editar()" class="fa fa-edit" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Editar"></a>
+  <a href="#" onclick="remover()" class="fa fa-trash" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Remover"></a>
+ </td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Refrigernte</td>
+		<td>
+			<button id="status1" class="ativo1" onclick="alternarStatus1()">Ativo</button>
+  
+
+  <script>
+    function alternarStatus1() {
+      var statusElemento = document.getElementById("status1");
+
+      if (statusElemento.classList.contains("ativo")) {
+        statusElemento.innerHTML = "Inativo";
+        statusElemento.classList.remove("ativo");
+        statusElemento.classList.add("inativo");
+      } else {
+        statusElemento.innerHTML = "Ativo";
+        statusElemento.classList.remove("inativo");
+        statusElemento.classList.add("ativo");
+      }
+    }
+  </script>
+
+  <td>
+ 	
+  <a href="#" onclick="verDetalhes()" class="fa fa-list view" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title=" ver Detalhes"></a>
+  <a href="#" onclick="editar()" class="fa fa-edit" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Editar"></a>
+  <a href="#" onclick="remover()" class="fa fa-trash" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Remover"></a>
+  
+ </td>
+		</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Cajuina</td>
+		<td>
+			<button id="status2" class="ativo2" onclick="alternarStatus2()">Ativo</button>
+  
+
+  <script>
+    function alternarStatus2() {
+      var statusElemento = document.getElementById("status2");
+
+      if (statusElemento.classList.contains("ativo")) {
+        statusElemento.innerHTML = "Inativo";
+        statusElemento.classList.remove("ativo");
+        statusElemento.classList.add("inativo");
+      } else {
+        statusElemento.innerHTML = "Ativo";
+        statusElemento.classList.remove("inativo");
+        statusElemento.classList.add("ativo");
+      }
+    }
+  </script>
+</td>
+ <td>
+ 	
+  	
+  <a href="#" onclick="verDetalhes()" class="fa fa-list view" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title=" ver Detalhes"></a>
+  <a href="#" onclick="editar()" class="fa fa-edit" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Editar"></a>
+  <a href="#" onclick="remover()" class="fa fa-trash" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Remover"></a>
+  
+ </td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Borda</td>
+		<td>
+			<button id="status3" class="ativo3" onclick="alternarStatus3()">Ativo</button>
+  
+
+  <script>
+    function alternarStatus3() {
+      var statusElemento = document.getElementById("status3");
+
+      if (statusElemento.classList.contains("ativo")) {
+        statusElemento.innerHTML = "Inativo";
+        statusElemento.classList.remove("ativo");
+        statusElemento.classList.add("inativo");
+      } else {
+        statusElemento.innerHTML = "Ativo";
+        statusElemento.classList.remove("inativo");
+        statusElemento.classList.add("ativo");
+      }
+    }
+  </script>
+</td>
+ <td>
+ 	
+  <a href="#" onclick="verDetalhes()" class="fa fa-list view" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title=" ver Detalhes"></a>
+  <a href="#" onclick="editar()" class="fa fa-edit" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Editar"></a>
+  <a href="#" onclick="remover()" class="fa fa-trash" data-bs-toggle="tooltip"
+        data-bs-placement="right"
+        title="Remover"></a>
+
+  
+ </td>
+	</tr>
+</tbody>
+</table>
 		</hr>
 	</hr>
 
